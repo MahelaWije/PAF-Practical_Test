@@ -60,8 +60,8 @@ public class UsersAPI extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request);
-		String output = userObj.updateUserDetails(paras.get("hidUserIDSave").toString(), paras.get("username").toString(),
-				paras.get("phoneNo").toString(), paras.get("age").toString(), paras.get("address").toString(), paras.get("gender").toString(), paras.get("email").toString());
+		String output = userObj.updateUserDetails(paras.get("hidUserIDSave").toString(), paras.get("username").toString().replace("+", " "),
+				paras.get("phoneNo").toString(), paras.get("age").toString(), paras.get("address").toString(), paras.get("gender").toString(), paras.get("email").toString().replace("%40", "@"));
 		response.getWriter().write(output);
 	}
 
