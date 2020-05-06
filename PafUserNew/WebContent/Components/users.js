@@ -12,7 +12,7 @@ $(document).on("click", "#btnSave", function(event) {
 	$("#alertError").text("");
 	$("#alertError").hide();
 	// Form validation-------------------
-	var status = validateItemForm();
+	var status = validateUserForm();
 	if (status != true) {
 		$("#alertError").text(status);
 		$("#alertError").show();
@@ -104,7 +104,7 @@ $(document).on(
 			$("#email").val($(this).closest("tr").find('td:eq(5)').text());
 		});
 // CLIENTMODEL=========================================================================
-function validateItemForm() {
+function validateUserForm() {
 	// USERNAME
 	if ($("#username").val().trim() == "") {
 		return "Insert Username.";
